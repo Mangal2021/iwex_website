@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include iwex *.css
+recursive-include iwex *.csv
+recursive-include iwex *.html
+recursive-include iwex *.ico
+recursive-include iwex *.js
+recursive-include iwex *.json
+recursive-include iwex *.md
+recursive-include iwex *.png
+recursive-include iwex *.py
+recursive-include iwex *.svg
+recursive-include iwex *.txt
+recursive-exclude iwex *.pyc
