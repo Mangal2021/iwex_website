@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #0e8342;
+  --primary-color-rgb: 14, 131, 66;
+
+  --secondary-color: #98ca3d;
+  --secondary-color-rgb: 152, 202, 61;
+}
+
+a.btn-custom.invert,.bg-color-secondary, .bg-color-secondary h1, .bg-color-secondary h2, .bg-color-secondary h3, .bg-color-secondary h4, .bg-color-secondary h5, .bg-color-secondary h6, .p-title.invert,.feature-box.style-3 .bg-color-secondary,#form_subscribe #btn-submit i, .p-tagline, i.bg-color-secondary{
+	color:#202020;
+}
