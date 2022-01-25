@@ -7813,7 +7813,7 @@ body.dark-mode,
 	z-index:1;
 }
 
-div.round{
+.div.round{
 	border-radius:10px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
