@@ -10704,6 +10704,7 @@ a, img {
 	header.header-mobile{
 		overflow:hidden;
 		position:relative;
+		background-color: #0e8342;
 	}
 	header.header-mobile #mainmenu {
 		float: none;
