@@ -1,5 +1,8 @@
 import frappe
 
 def get_context(context):
-    context.employee = frappe.get_doc("CompanyEmployeeDetail","868f86e75a")
+    x = frappe.form_dict.docname;
+    
+    context.employee = frappe.get_doc("CompanyEmployeeDetail",x)
     return context
+

@@ -109,103 +109,36 @@
 </head>
 <body class="hide-rtl appbase1" frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %}>
 
-    <div id="wrapper">
-        <div id="topbar" class="text-light">
-            <div class="container">
-                <div class="topbar-left sm-hide">
-                    <span class="topbar-widget tb-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                    </span>
-                </div>
+    {%- block navbar -%}
+		{{ web_block(
+			navbar_template or 'Standard Navbar',
+			values=_context_dict,
+			add_container=0,
+			add_top_padding=0,
+			add_bottom_padding=0,
+		) }}
+	{%- endblock -%}
 
-                <div class="topbar-right">
-                    <div class="topbar-right">
-                        <span class="topbar-widget"><a href="privacy">Privacy policy</a></span>
-                        <span class="topbar-widget"><a href="#">Customer Support</a></span>
-                        <span class="topbar-widget"><a href="faq">FAQ</a></span>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-
-        <header class="transparent">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="de-flex sm-pt10">
-                            <div class="de-flex-col">
-                                <!-- logo begin -->
-                                <div id="logo">
-                                    <a href="iwexindex">
-                                        <img alt="" class="logo" src="/assets/iwex/iwex_content/images/iwex_logo_main.png" />
-                                        <img alt="" class="logo-2" src="assets/iwex/iwex_content/images/iwex_logo_main.png" />
-                                    </a>
-                                </div>
-                                <!-- logo close -->
-                            </div>
-                            <div class="de-flex-col header-col-mid">
-                                <!-- mainmenu begin -->
-                                <ul id="mainmenu">
-                                    <li>
-                                        <a href="iwexindex">Home<span></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="product">Products<span></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Our Services<span></span></a>
-                                        <ul>
-                                            <li><a href="#">Implementation</a></li>
-                                            <li><a href="#">Migration</a></li>
-                                            <li><a href="#">Customization</a></li>
-                                            <li><a href="#">Support and Maintenance</a></li>
-                                            <li><a href="#">Training</a></li>
-                                            <li><a href="#">Integration</a></li>
-                                            
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="aboutus">About Us<span></span></a>
-                                    </li>
-                                    <li>
-                                        <a href="lead-for-erpnext-support?new=1" target="blank">Support<span></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="de-flex-col">
-                                    <span id="menu-btn"></span>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="no-bottom no-top" id="content">
-        <div id="top"></div>
-            {% block content %}
-            {{ content }}
-            {% endblock %}
-        </div>
-
-        <a href="#" id="back-to-top"></a>
-
-        {%- block footer -%}
-        {{
-             web_block(
-            			footer_template or 'Standard Footer',
-            			values=_context_dict,
-            			add_container=0,
-            			add_top_padding=0,
-            			add_bottom_padding=0
-            		)
-        }}
-        {%- endblock -%}
+    <div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+        {% block content %}
+        {{ content }}
+        {% endblock %}
     </div>
 
+    <a href="#" id="back-to-top"></a>
+
+    {%- block footer -%}
+    {{
+         web_block(
+                    footer_template or 'Standard Footer',
+                    values=_context_dict,
+                    add_container=0,
+                    add_top_padding=0,
+                    add_bottom_padding=0
+                )
+    }}
+    {%- endblock -%}
     {% block base_scripts %}
     <!-- js should be loaded in body! -->
     <!--<script type="text/javascript" src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>-->

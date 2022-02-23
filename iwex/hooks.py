@@ -1,4 +1,6 @@
+from __future__ import unicode_literals
 from . import __version__ as app_version
+from iwex.route import routes
 
 app_name = "iwex"
 app_title = "IWex"
@@ -46,6 +48,9 @@ app_license = "MIT"
 # role_home_page = {
 #	"Role": "home_page"
 # }
+
+website_route_rules = routes
+
 
 # Generators
 # ----------
